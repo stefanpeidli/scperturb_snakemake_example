@@ -12,7 +12,7 @@ define a pipeline in a human-readable way.
 In this example, your_method is a simple script that reads in a dataset, pseudo-bulks each perturbation
 and saves the results. You can just replace the script with your actual method.
 
-![DAG of the example snakemake workflow](snake_dag.pdf "DAG of the example snakemake workflow")
+![DAG of the example snakemake workflow](images/snake_dag.png "DAG of the example snakemake workflow")
 
 
 ## Installation
