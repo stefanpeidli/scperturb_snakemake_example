@@ -1,3 +1,8 @@
+# Custom
+*.h5ad
+.snakemake
+logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

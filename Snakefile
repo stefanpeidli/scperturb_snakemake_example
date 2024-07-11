@@ -27,6 +27,8 @@ if DATASETS == 'all':
     datasets = available_datasets
 else:
     datasets = [d for d in DATASETS if d in available_datasets]
+wildcard_constraints:
+    dataset='|'.join(datasets)
 
 # This here defines the files that you want this pipeline to generate.
 # The expand function is basically a list comprehension that returns a list of 
@@ -40,7 +42,6 @@ rule download_dataset:
 	"Downloads an RNA datasets of scperturb from zenodo via wget."
 	output: DATA_DIR / '{dataset}.h5ad'
 	resources:
-		partition='short',
 		time='4:00:00',
 		mem_mb=4000,
 		disk_mb=4000
@@ -61,11 +62,10 @@ rule run_your_method:
     output: 
         output_1 = OUT_DIR / '{dataset}_your_method_output.h5ad'
     resources:
-        partition='short',
         time='4:00:00',
         mem_mb=16000,
         disk_mb=16000
     conda:  # Optional, if you want to use a conda environment for your method
         "conda_env_for_your_method.yaml"
     shell:
-        "python run_your_method.py {input.input_1} {output.output_1}"
+        "python run_your_method.py -i {input.input_1} -o {output.output_1}"
