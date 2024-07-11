@@ -1,5 +1,9 @@
-DATA_DIR: "/scratch/peidli/scPerturb/"  # Directory where we will store the downloaded data from scperturb.org
-OUT_DIR: "/home/peidli/projects/scPerturb/"  # Directory where the output of your method will be stored
-DATASETS: "all"  # "all" or a list of dataset names in scperturb.org
+DATA_DIR: "/scratch/peidli/temp/"  # Directory where we will store the downloaded data from scperturb.org
+OUT_DIR: "/scratch/peidli/temp/"  # Directory where the output of your method will be stored
+DATASET_TABLE: "scperturb_datasets_info.xlsx"
+DATASETS: # "all" or a list of RNA dataset names in scperturb.org
+  - "PapalexiSatija2021_eccite_RNA"
+  - "NormanWeissman2019_filtered"
+  - "ZhaoSims2021"
 ZENODO_RNA_URL: 'https://zenodo.org/record/10044268/'  # V1.3, RNA
 ZENODO_ATAC_URL: 'https://zenodo.org/record/7058382' # V1.0 ATAC
