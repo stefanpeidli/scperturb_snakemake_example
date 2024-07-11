@@ -1,0 +1,11 @@
+name: your_method_env
+
+channels:
+ - conda-forge
+ - bioconda
+ - defaults
+
+dependencies:
+  - python=3.9
+  - conda-forge::scanpy
+  - conda-forge::decoupler-py
